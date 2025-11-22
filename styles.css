@@ -1,3 +1,78 @@
-body { font-family: Arial, sans-serif; padding: 20px; }
-#result { margin-top: 20px; }
-h3, h4 { margin: 0; }
+body {
+background: #f2f2f2;
+margin: 0;
+padding: 0;
+}
+
+header {
+background: #3c78a9;
+padding: 40px 0;
+text-align: center;
+}
+
+header h1 {
+margin: 0;
+color: white;
+font-size: 32px;
+font-weight: normal; /* changed from 800 to normal */
+}
+
+main {
+width: 75%;
+max-width: 900px;
+margin: 30px auto;
+background: white;
+padding: 40px;
+border-radius: 6px;
+border: 1px solid #ccc;
+}
+
+.search-box {
+display: flex;
+}
+
+.search-box input {
+flex: 1;
+padding: 12px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px 0 0 4px;
+}
+
+.search-box button {
+padding: 12px 20px;
+background: #d9534f;
+border: none;
+color: white;
+font-size: 16px;
+border-radius: 0 4px 4px 0;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.search-box button {
+background: #680303;
+}
+
+.result-area {
+margin-top: 40px;
+}
+
+#result h3 {
+margin: 0;
+font-size: 22px;
+font-weight: 800;
+}
+
+#result h4 {
+margin: 5px 0 15px;
+font-size: 16px;
+font-weight: 700;
+color: #555;
+}
+
+#result p {
+font-size: 15px;
+line-height: 1.5;
+color: #333;
+}

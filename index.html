@@ -6,11 +6,22 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Avengers Character Search</h1>
-  <input id="query" placeholder="Type hero name/alias ">
+  <header>
+        <h1>AVENGERS CHARACTER SEARCH</h1>
+    </header>
+    <main>
+    <section class="search-area">
+        <label>Search by Full Name or Alias</label>
+   <div class="search-box">
+  <input type="text" id="query" placeholder="Type hero name/alias ">
   <button id="searchBtn">Search</button>
+  </div>
+  </section>
 
-  <div id="result"></div>
+    <section class="result-area">
+        <h2>RESULT</h2>
+        <div id="result"></div>
+   </section>
 
   <script src="app.js"></script>
 </body>

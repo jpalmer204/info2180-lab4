@@ -63,10 +63,31 @@ $superheroes = [
   ], 
 ];
 
-?>
+header('Content-Type: application/json; charset=utf-8');
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+$query = isset($_GET['query']) ? trim($_GET['query']) : '';
+$query = filter_var($query, FILTER_SANITIZE_STRING);
+if ($query === '') {
+    $list = array_map(function($hero) {
+        return [
+            "alias" => $hero["alias"],
+            "name" => $hero["name"]
+        ];
+    }, $superheroes);
+
+    echo json_encode($list);
+    exit;
+}
+$found = null;
+
+foreach ($superheroes as $hero) {
+    if (strcasecmp($hero["alias"], $query) === 0 ||
+        strcasecmp($hero["name"], $query) === 0) {
+        $found = $hero;
+        $found['biography'] = '<p>' . htmlspecialchars($found['biography'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</p>';
+        break;
+    }
+}
+
+echo json_encode($found);
+exit;
